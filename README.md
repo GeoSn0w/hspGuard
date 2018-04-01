@@ -22,5 +22,5 @@ In fact, this whole kext made by @s1guza couldn't be abused by a malicious chara
 disabled altogether.
 
 <B>How to compile</B>
-<h3>gcc hspGuard.c -o hspGuard</h3>
+<h6>gcc hspGuard.c -o hspGuard</h6>
 You can ignore the warnings.
