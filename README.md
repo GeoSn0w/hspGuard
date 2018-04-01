@@ -1,5 +1,5 @@
 # hspGuard - macOS Kernel Task Port Checker Tool
-hsp comes from `host_special_port(4)` patch implemented by @s1guza in his <a href ="https://github.com/Siguza/hsp4">hsp4 kext</a>
+hsp comes from `host_special_port(4)` patch implemented by @s1guza in his <a href ="https://github.com/Siguza/hsp4">hsp4 kext.</a>
 
 Checks macOS for Kernel Task Port. It may help detect intrusive kexts that would leak the kernel task.
 
@@ -35,7 +35,7 @@ Done. This will return the kernel task port if the system is compromised. So as 
 macOS El Capitan is actually the main target here. Although @s1guza's kext does work on macOS Sierra and High Sierra, 
 Apple did something relatively interesting. Instead of attempting to limit the programs from grabbing the kernel task port, they limited what the program can do after grabbing it. With the release of macOS 10.12.4, you can grab the kern task port, but most of the APIs will see it like `MACH_PORT_NULL`, rendering it useless.
 
-@s1guza has a way better documentation of the matter and you can <a href = "https://github.com/Siguza/hsp4">check it out here</a>
+@s1guza has a way better documentation of the matter and you can <a href = "https://github.com/Siguza/hsp4">check it out here.</a>
 
 Suffices to say that macOS El Capitan is a better target for someone who may wanna use such kext, but that does not make Sierra and High Sierra flawless.
 
@@ -51,4 +51,4 @@ Do whatever you want with the code. Remix, adapt, sell, I don't give a damn.
 @s1guza for his amazing hsp4 kext. Very useful thingy if you know how to use it and how not to expose your system to all the malware you can get :P Seriously, don't run this kext unless you really know what the hell you are doing.
 
 ### Contact
-If you wanna talk with me about the ehernal life, cats, electronics, iOS, or whatever, my twitter is ``@FCE365``.
+If you wanna talk with me about the ehernal life, cats, electronics, iOS, or whatever, my twitter is GeoSn0w (``@FCE365``). I also run the F.C.E. 365 TV - iDevice Central on YouTube so you can drop me a PM there too.
