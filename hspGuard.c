@@ -8,6 +8,14 @@
 #include <sys/sysctl.h>
 #include <mach/mach.h>
 #include <unistd.h> //geteuid();
+#include <stdbool.h>
+#include <stdint.h>
+#define CSR_ALLOW_UNTRUSTED_KEXTS    (1 << 0)
+#define CSR_ALLOW_UNRESTRICTED_NVRAM (1 << 6)
+#define CSR_ALLOW_UNRESTRICTED_FS    (1 << 1)
+typedef uint32_t cst_status_t;
+cst_status_t current = 0;
+extern int csr_get_active_config(cst_status_t *current);
 
 kern_return_t get_privileges_status(){
 
@@ -35,36 +43,57 @@ kern_return_t check_SIP_status(){
         //Get shit into the buffer
     }
     pclose(fork_process);
-    if(strcmp(control, sip_status)){
-        printf("[hspGuard] DANGER: ");
-        printf("%s", &sip_status);
-        return KERN_FAILURE;
-        
-    } else {
-        printf("[hspGuard] SUCCESS: ");
-        printf("%s", &sip_status);
-    }
+    printf("[hspGuard] INFO: ");
+    printf("%s", &sip_status);
     return KERN_SUCCESS;
 }
-kern_return_t get_macos_version(){
-    char placeholder[256];
-    size_t howbig = sizeof(placeholder);
-    int juicy_data = sysctlbyname("kern.osrelease", str, &size, NULL, 0);
-    if(strcmp(placeholder,"0"){
-        printf("[hspGuard] ERROR: You may wanna run this on macOS...");
-       return KERN_FAILURE;
+//I will make these a single function.
+//I will however leave them as-is for the time being.
+int check_untrusted_kexts_allowed(){
+    int csr_flag = CSR_ALLOW_UNTRUSTED_KEXTS;
+    bool test_CSR_flag = (current & csr_flag);
+    if(test_CSR_flag){
+        printf("Disabled\n");
+    } else {
+        printf("Enabled\n");
     }
-       return KERN_SUCCESS;
+    return 0;
+}
+int check_nvram_protection_sts(){
+    int csr_flag = CSR_ALLOW_UNRESTRICTED_NVRAM;
+    bool test_nvram_flag = (current & csr_flag);
+    if(test_nvram_flag){
+        printf("Disabled\n");
+    } else {
+        printf("Enabled\n");
+    }
+    return 0;
+}
+int check_file_system_sts(){
+    int csr_flag = CSR_ALLOW_UNRESTRICTED_FS;
+    bool test_fs_flag = (current & csr_flag);
+    if(test_fs_flag){
+       printf("Disabled\n");
+    } else {
+       printf("Enabled\n");
+    }
+    return 0;
 }
 int main(){
     task_t kernel_port;
     system("clear"); //Reserve a blank screen for out tool.
     printf("hspGuard 1.0 - macOS Kernel Special Port Checker\n");
     printf("Created by GeoSn0w (@FCE365)\n\n");
-    get_macos_version();
     printf("[hspGuard] INFO: Checking application privileges.\n");
     if (get_privileges_status() == KERN_SUCCESS){
         check_SIP_status();
+        printf("[hspGuard] INFO: Preparing to check SIP status in-depth...\n");
+        printf("[hspGuard] INFO: SIP Kext Signing Restrictions: ");
+        check_untrusted_kexts_allowed();
+        printf("[hspGuard] INFO: SIP NVRAM Restrictions: ");
+        check_nvram_protection_sts();
+        printf("[hspGuard] INFO: SIP File System Restrictions: ");
+        check_file_system_sts();
         printf("[hspGuard] INFO: Attempting to get the Kernel Task Port. We shouldn't be able to!\n");
         kernel_port = get_kernel_task_port();
         if(kernel_port != 0){
