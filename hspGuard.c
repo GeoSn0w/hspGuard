@@ -44,7 +44,7 @@ kern_return_t check_SIP_status(){
     }
     pclose(fork_process);
     printf("[hspGuard] INFO: ");
-    printf("%s", &sip_status);
+    printf("%s", sip_status);
     return KERN_SUCCESS;
 }
 //I will make these a single function.
