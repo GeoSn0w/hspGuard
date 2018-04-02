@@ -40,10 +40,8 @@ Apple did something relatively interesting. Instead of attempting to limit the p
 Suffices to say that macOS El Capitan is a better target for someone who may wanna use such kext, but that does not make Sierra and High Sierra flawless.
 
 ### Compiling
-  ``gcc hspGuard.c -o hspGuard``
+  ``make hspGuard``
   
-You can ignore the warnings.
-
 ### License
 Do whatever you want with the code. Remix, adapt, sell, I don't give a damn.
 
