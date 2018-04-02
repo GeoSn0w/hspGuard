@@ -51,4 +51,4 @@ Do whatever you want with the code. Remix, adapt, sell, I don't give a damn.
 @s1guza for his amazing hsp4 kext. Very useful thingy if you know how to use it and how not to expose your system to all the malware you can get :P Seriously, don't run this kext unless you really know what the hell you are doing.
 
 ### Contact
-If you wanna talk with me about the ehernal life, cats, electronics, iOS, or whatever, my twitter is GeoSn0w (``@FCE365``). I also run the F.C.E. 365 TV - iDevice Central on YouTube so you can drop me a PM there too.
+If you wanna talk with me about the eternal life, cats, electronics, iOS, or whatever, my twitter is GeoSn0w (``@FCE365``). I also run the F.C.E. 365 TV - iDevice Central on YouTube so you can drop me a PM there too.
