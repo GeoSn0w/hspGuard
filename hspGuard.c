@@ -85,6 +85,7 @@ int main(){
     printf("hspGuard 1.0 - macOS Kernel Special Port Checker\n");
     printf("Created by GeoSn0w (@FCE365)\n\n");
     printf("[hspGuard] INFO: Checking application privileges.\n");
+    csr_get_active_config(&current);
     if (get_privileges_status() == KERN_SUCCESS){
         check_SIP_status();
         printf("[hspGuard] INFO: Preparing to check SIP status in-depth...\n");
