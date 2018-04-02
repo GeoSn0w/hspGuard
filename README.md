@@ -49,6 +49,7 @@ Do whatever you want with the code. Remix, adapt, sell, I don't give a damn.
 
 ### Special Thanks
 @IBSparkes for motivation to pursue the demystifying of how csrutil works in order to grab more SIP data :P
+
 @s1guza for his amazing hsp4 kext. Very useful thingy if you know how to use it and how not to expose your system to all the malware you can get :P Seriously, don't run this kext unless you really know what the hell you are doing.
 
 ### Contact
