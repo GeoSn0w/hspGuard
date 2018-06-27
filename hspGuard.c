@@ -27,6 +27,7 @@ kern_return_t get_privileges_status(){
         printf("[hspGuard] SUCCESS: The program has enough privileges to perform the checks.\n");
     }
     return KERN_SUCCESS;
+    
 }
 
 task_t get_kernel_task_port(){
@@ -81,7 +82,7 @@ int check_file_system_sts(){
 }
 int main(){
     task_t kernel_port;
-    system("clear"); //Reserve a blank screen for out tool.
+    system("clear"); //Reserve a blank screen for out tool. In theory you would need "cls" for Windows but the tool isn't intended for Win.
     printf("hspGuard 1.0 - macOS Kernel Special Port Checker\n");
     printf("Created by GeoSn0w (@FCE365)\n\n");
     printf("[hspGuard] INFO: Checking application privileges.\n");
