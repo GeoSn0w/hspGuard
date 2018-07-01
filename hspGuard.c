@@ -1,6 +1,6 @@
 // hspGuard 1.0
 // Copyright GeoSn0w 2018
-// Use as you want.
+// Use as you want. Credit where credits are due.
 
 #include <stdio.h>
 #include <stdlib.h>
