@@ -52,3 +52,9 @@ Do whatever you want with the code. Remix, adapt, sell, I don't give a damn.
 
 ### Contact
 If you wanna talk with me about the eternal life, cats, electronics, iOS, or whatever, my twitter is GeoSn0w (``@FCE365``). I also run the iDevice Central on YouTube so you can drop me a PM there too. You may also find me on <a href="https://idevicecentral.com">iDevice Central Website</a>
+
+### My Websites
+* <a href="https://idevicecentral.com">Latest iOS 16 Jailbreak News</a>
+* <a href="https://gametutorialpro.com">Latest Gaming News & Guides</a>
+* <a href="https://jailbreak.fce365.info">iOS Jailbreak Forum</a>
+* <a href="https://gsmbypass.com">Latest FRP Bypass Tools & Guides</a>
